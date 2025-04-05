@@ -206,6 +206,14 @@ button.disabled:hover {
 </style>
 </head>
 <body>
+    <div style="margin-bottom: 1em;">
+  <label for="lang-select">Langue / Language:</label>
+  <select id="lang-select">
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
 <h1>Picker</h1>
 
 <p>You can include any content you want here.</p>
@@ -234,8 +242,32 @@ button.disabled:hover {
 'use strict';
 
 var items = [
-    // Define your items here
+    {
+      id: 'shanks',
+      name_fr: 'Shanks le Roux',
+      name_en: 'Red-Haired Shanks',
+      image: 'images/shanks.png',
+      categories: [
+        'Pirate', 'Capitaine', 'Sabreur',
+        'Équipage du Roux', 'Quatre Empereurs',
+        'Équipage de Roger', 'Dragon Céleste',
+        'West Blue', 'Statut: Vivant',
+        'Apparition: Romance Dawn',
+        'Apparition: Loguetown',
+        'Apparition: Jaya',
+        'Apparition: Post-Enies Lobby',
+        'Apparition: Marineford',
+        'Apparition: Post-Marineford',
+        'Apparition: Reverie',
+        'Apparition: Wano Kuni',
+        'Apparition: Film Red',
+        'Apparition: Egghead',
+        'Apparition: Erbaf'
+      ]
+    },
+    // tu pourras ajouter d’autres ici
 ];
+
 
 var myPicker = new picker.Picker({
     items: items
