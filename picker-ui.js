@@ -466,7 +466,9 @@
          */
         var itemContent;
         var itemName;
-        itemName = item.name || item.id;
+        var lang = document.getElementById('lang-select')?.value || 'fr';
+itemName = lang === 'en' ? item.name_en : item.name_fr;
+
         if (this.options.getItemElem) {
             return $(this.options.getItemElem(item, settings)).addClass('item').data('item', item.id);
         }
