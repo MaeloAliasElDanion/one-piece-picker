@@ -281,8 +281,19 @@ var pickerUI = new PickerUI(myPicker, {
         redo: "#redo",
         evaluating: "#evaluating",
         favorites: "#favorites"
+    },
+    getItemElem: function (item) {
+        var lang = document.getElementById('lang-select')?.value || 'fr';
+        var name = lang === 'en' ? item.name_en : item.name_fr;
+        var img = item.image;
+        var li = document.createElement('li');
+        li.classList.add('item');
+        li.dataset.item = item.id;
+        li.innerHTML = `<img src="${img}" alt="${name}" title="${name}">`;
+        return li;
     }
 });
+
 
 pickerUI.initialize();
 
